@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle Logístico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📊 Controle Operacional Diário</h1>
+
+<div class="container">
+  <form id="formulario">
+
+    <label>Data:</label>
+    <input type="date" id="data" required>
+
+    <label>Prédio:</label>
+    <select id="predio">
+      <option>T&C</option>
+      <option>Body</option>
+      <option>Stamp</option>
+      <option>PWT</option>
+    </select>
+
+    <label>Doca:</label>
+    <select id="doca">
+      <option>1C</option>
+      <option>1T</option>
+      <option>1K</option>
+      <option>1G</option>
+      <option>1B</option>
+      <option>30</option>
+    </select>
+
+    <label>Parada de Linha (min):</label>
+    <input type="number" id="parada">
+
+    <label>Motivo:</label>
+    <input type="text" id="motivoParada">
+
+    <label>Causa:</label>
+    <input type="text" id="causaParada">
+
+    <label>Recebimento Local:</label>
+    <input type="number" id="recLocal">
+
+    <label>Recebimento Importado:</label>
+    <input type="number" id="recImportado">
+
+    <label>Previsto:</label>
+    <input type="number" id="previsto">
+
+    <label>Real:</label>
+    <input type="number" id="real">
+
+    <label>Absenteísmo:</label>
+    <input type="number" id="absenteismo">
+
+    <label>Motivo Absenteísmo:</label>
+    <input type="text" id="motivoAbs">
+
+    <label>Previsão de Retorno:</label>
+    <input type="date" id="retorno">
+
+    <label>Acidentes:</label>
+    <input type="number" id="acidentes">
+
+    <button type="submit">Salvar Registro</button>
+  </form>
+</div>
+
+<h2>📋 Histórico</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Doca</th>
+      <th>Parada (min)</th>
+    </tr>
+  </thead>
+  <tbody id="historico"></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
