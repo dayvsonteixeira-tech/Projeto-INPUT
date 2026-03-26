@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Gerencial Logístico</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+
+<body>
+
+<h1>📊 Painel Gerencial Logístico</h1>
+
+<form id="formulario">
+
+  <div class="linha-dupla">
+    <div>
+      <span>Data:</span>
+      <input type="date" id="data" required>
+    </div>
+
+    <div>
+      <span>Prédio:</span>
+      <select id="predio" required>
+        <option value="T&C">T&C</option>
+        <option value="BODY/STAMP">BODY/STAMP</option>
+        <option value="PWT">PWT</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="linha-dupla">
+    <div>
+      <span>Doca:</span>
+      <select id="doca" required>
+        <option>1C</option>
+        <option>1T</option>
+        <option>1K</option>
+        <option>1G</option>
+        <option>1B</option>
+        <option>30</option>
+      </select>
+    </div>
+
+    <div>
+      <span>Turno:</span>
+      <select id="turno" required>
+        <option value="1">1º Turno</option>
+        <option value="2">2º Turno</option>
+      </select>
+    </div>
+  </div>
+
+  <fieldset>
+    <legend>Parada de Linha *</legend>
+    <input type="number" id="parada" placeholder="Minutos" required>
+    <input type="text" id="motivoParada" placeholder="Motivo da parada">
+    <input type="text" id="causaParada" placeholder="Causa da parada">
+  </fieldset>
+
+  <fieldset>
+    <legend>Recebimento Local *</legend>
+    <input type="number" id="recLocal" placeholder="Quantidade recebida" required>
+    <input type="text" id="obsLocal" placeholder="Observação">
+  </fieldset>
+
+  <fieldset>
+    <legend>Recebimento Importado *</legend>
+    <input type="number" id="recImportado" placeholder="Quantidade recebida" required>
+    <input type="text" id="obsImportado" placeholder="Observação">
+  </fieldset>
+
+  <fieldset>
+    <legend>Absenteísmo</legend>
+    <input type="number" id="absenteismo" placeholder="Quantidade de colaboradores">
+  </fieldset>
+
+  <fieldset>
+    <legend>Segurança</legend>
+    <input type="number" id="acidentes" placeholder="Quantidade de acidentes">
+  </fieldset>
+
+  <button type="submit">💾 Salvar</button>
+</form>
+
+<hr>
+
+<div class="acoes">
+  <input type="date" id="filtroData">
+  <button onclick="filtrarData()">🔍 Filtrar</button>
+  <button onclick="exportarExcel()">📥 Exportar</button>
+  <button onclick="abrirFiltroPredio()">🏢 Grupo</button>
+</div>
+
+<div id="painelFiltro" style="display:none;">
+  <button onclick="filtrarPorGrupo('TC')">T&C</button>
+  <button onclick="filtrarPorGrupo('OUTROS')">BODY/STAMP/PWT</button>
+</div>
+
+<div id="resultadoGrupo"></div>
+
+<div id="kpisDia"></div>
+
+<table id="tabela">
+<thead>
+<tr>
+<th>Data</th>
+<th>Prédio</th>
+<th>Doca</th>
+<th>Turno</th>
+<th>Parada</th>
+<th>Motivo</th>
+<th>Causa</th>
+<th>Abs</th>
+<th>Local</th>
+<th>Obs Local</th>
+<th>Importado</th>
+<th>Obs Importado</th>
+</tr>
+</thead>
+<tbody id="historico"></tbody>
+</table>
+
+<canvas id="graficoDocas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
