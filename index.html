@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Gerencial Logístico</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+<body>
+
+<h1>📊 Painel Gerencial Logístico</h1>
+
+<form id="formulario">
+
+<input type="date" id="data" required>
+<select id="predio">
+<option>T&C</option>
+<option>Body</option>
+<option>Stamp</option>
+<option>PWT</option>
+</select>
+<select id="doca">
+<option>1C</option>
+<option>1T</option>
+<option>1K</option>
+<option>1G</option>
+<option>1B</option>
+<option>30</option>
+</select>
+
+<input type="number" id="parada" placeholder="Parada de Linha (min)">
+<input type="text" id="motivoParada" placeholder="Motivo">
+<input type="text" id="causaParada" placeholder="Causa">
+
+<input type="number" id="recLocal" placeholder="Recebimento Local">
+<input type="number" id="recImportado" placeholder="Recebimento Importado">
+
+<input type="number" id="absenteismo" placeholder="Absenteísmo">
+<input type="text" id="motivoAbs" placeholder="Motivo Absenteísmo">
+<input type="date" id="retornoAbs">
+
+<input type="number" id="acidentes" placeholder="Acidentes">
+
+<button type="submit">💾 Salvar</button>
+</form>
+
+<hr>
+
+<div class="acoes">
+<input type="date" id="filtroData">
+<button onclick="filtrarData()">🔍 Filtrar por Data</button>
+<button onclick="exportarExcel()">📥 Exportar Excel</button>
+<button onclick="abrirFiltroPredio()">🏢 Filtrar por Prédio</button>
+</div>
+
+<div id="kpisDia" style="display:none;"></div>
+
+<div style="overflow-x:auto;">
+<table id="tabela" style="display:none;">
+<thead>
+<tr>
+<th>📅 Data</th>
+<th>🏢 Prédio</th>
+<th>🚪 Doca</th>
+<th>⏱ Linha Parada</th>
+<th>📌 Motivo</th>
+<th>⚙️ Causa</th>
+<th>👥 Absenteísmo</th>
+<th>📆 Retorno</th>
+<th>📦 Local</th>
+<th>🌍 Importado</th>
+</tr>
+</thead>
+<tbody id="historico"></tbody>
+</table>
+</div>
+
+<div id="painelFiltro" style="display:none;">
+<p>🏢 Escolha o grupo:</p>
+<button onclick="filtrarPorGrupo('TC')">T&C</button>
+<button onclick="filtrarPorGrupo('OUTROS')">Body/Stamp/PWT</button>
+</div>
+
+<div id="resultadoGrupo"></div>
+
+<canvas id="graficoDocas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
