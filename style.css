@@ -1,0 +1,166 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  padding: 15px;
+}
+
+/* TÍTULO */
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* FORMULÁRIO */
+form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* LINHAS DUPLAS (Data/Prédio e Doca/Turno) */
+.linha-dupla {
+  display: flex;
+  gap: 20px;
+}
+
+.linha-dupla div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+}
+
+/* LABEL TEXTO */
+span {
+  font-weight: bold;
+  min-width: 70px;
+}
+
+/* INPUTS */
+input,
+select {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* FOCO (efeito ao clicar) */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* FIELDSETS (blocos) */
+fieldset {
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* TITULO DO BLOCO */
+legend {
+  font-weight: bold;
+  color: #007bff;
+  padding: 0 5px;
+}
+
+/* BOTÕES */
+button {
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* AÇÕES (filtro/exportar) */
+.acoes {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* KPI */
+#kpisDia {
+  background: #ffffff;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* TABELA */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+th {
+  background: #007bff;
+  color: #fff;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+  .linha-dupla {
+    flex-direction: column;
+  }
+
+  .linha-dupla div {
+    width: 100%;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 13px;
+  }
+
+  table {
+    font-size: 12px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
