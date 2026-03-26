@@ -1,0 +1,90 @@
+body {
+  font-family: Arial;
+  background: #f4f6f9;
+  padding: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.linha-dupla {
+  display: flex;
+  gap: 20px;
+}
+
+.linha-dupla div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+}
+
+span {
+  font-weight: bold;
+  min-width: 70px;
+}
+
+input, select {
+  padding: 8px;
+  width: 100%;
+}
+
+fieldset {
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+legend {
+  font-weight: bold;
+  color: #007bff;
+}
+
+button {
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.acoes {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: center;
+}
+
+#kpisDia {
+  background: #fff;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+@media(max-width:768px){
+  .linha-dupla {
+    flex-direction: column;
+  }
+}
