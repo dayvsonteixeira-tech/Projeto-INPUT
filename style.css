@@ -1,0 +1,90 @@
+body{
+  font-family:Arial;
+  background:#f4f6f9;
+  padding:15px;
+  margin:0;
+}
+
+h1{text-align:center;}
+
+form{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.linha-dupla{
+  display:flex;
+  gap:15px;
+}
+
+.linha-dupla div{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:50%;
+}
+
+input,select{
+  padding:6px;
+  height:32px;
+  font-size:13px;
+  width:100%;
+}
+
+fieldset{
+  border:2px solid #007bff;
+  border-radius:8px;
+  padding:8px;
+}
+
+legend{
+  color:#007bff;
+  font-weight:bold;
+}
+
+button{
+  padding:8px;
+  background:#007bff;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+.dashboard{
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+}
+
+.coluna{
+  width:50%;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+canvas{
+  background:#fff;
+  padding:10px;
+  border-radius:10px;
+}
+
+.controle-turno{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-top:15px;
+}
+
+.oculto{display:none;}
+
+@media(max-width:768px){
+  .linha-dupla{flex-direction:column;}
+  .dashboard{flex-direction:column;}
+  .coluna{width:100%;}
+}
